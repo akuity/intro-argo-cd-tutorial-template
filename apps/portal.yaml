@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: portal
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/<github-username>/intro-argo-cd-tutorial' # Update to match your fork.
+    path: portal
+    targetRevision: HEAD
+  destination:
+    namespace: portal
+    name: <environment-name> # Update this value.
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
