@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/<github-username>/intro-argo-cd-tutorial' # Update to match your fork.
+    repoURL: 'https://github.com/<username>/intro-argo-cd-tutorial' # Update to match your fork.
     path: portal
     targetRevision: HEAD
   destination:
