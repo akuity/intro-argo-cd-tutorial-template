@@ -1,0 +1,47 @@
+{
+	"name": "workshop-environment",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+
+	"features": {
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {
+			"enableNonRootDocker": "true",
+			"moby": "true"
+		},
+		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+			"version": "latest",
+			"helm": "latest",
+			"minikube": "latest"
+		}
+	},
+	
+	"hostRequirements": {
+		"cpus": 4
+	},
+	"postCreateCommand": "/bin/bash -c .devcontainer/post-create.sh",
+
+	"postStartCommand": "/bin/bash -c .devcontainer/post-start.sh",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+
+	"forwardPorts": [8080],
+	"portsAttributes": {
+		"8080": {
+			"label": "Argo CD Dashboard",
+			"protocol": "https"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"streetsidesoftware.code-spell-checker",
+				"streetsidesoftware.code-spell-checker-british-english"
+			]
+		}
+	}
+}
