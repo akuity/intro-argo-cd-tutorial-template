@@ -1,6 +1,6 @@
 # Introduction to Argo CD Template
 
-These are the supporting files for [the Introduction to Argo CD tutorial](https://docs.akuity.io/tutorials/introduction-to-argo-cd) in the Akuity docs.
+These are the supporting files for [the Introduction to Argo CD tutorial](https://docs.akuity.io/tutorials/intro-to-argo-cd/) in the Akuity docs.
 
 This tutorial will walk you through implementing Argo CD with the Akuity Platform, to manage the deployment of the Helm charts in a declarative fashion.
 
