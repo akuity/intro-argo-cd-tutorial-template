@@ -11,7 +11,7 @@ spec:
     targetRevision: HEAD
   destination:
     namespace: guestbook
-    name: <environment> # Update this value.
+    name: dev # Update this value.
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
