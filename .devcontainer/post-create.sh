@@ -4,7 +4,7 @@ echo "post-create start" >> ~/.status.log
 
 # this runs in background after UI is available
 
-kind create cluster --name scale
+kind create cluster --name dev
 
 echo 'source <(kubectl completion bash)' >> /home/vscode/.bashrc
 echo 'source <(akuity completion bash)' >> /home/vscode/.bashrc
