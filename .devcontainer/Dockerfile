@@ -14,9 +14,20 @@ ENV KIND_VERSION=v0.22.0
 RUN curl -Lo /usr/local/bin/kind https://kind.sigs.k8s.io/dl/${KIND_VERSION}/kind-linux-amd64 \
     && chmod +x /usr/local/bin/kind
 
+# This should be the same K8s version that kind creates.
+ENV KUBECTL_VERSION=v1.27.3
+RUN curl -Lo /usr/local/bin/kubectl "https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl" \
+    && chmod +x /usr/local/bin/kubectl
+
 # https://github.com/kubernetes-sigs/kustomize/releases
 ENV KUSTOMIZE_VERSION=v5.3.0
 RUN curl -Lo /tmp/kustomize.tar.gz https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2F${KUSTOMIZE_VERSION}/kustomize_${KUSTOMIZE_VERSION}_linux_amd64.tar.gz \
     && tar -xvf /tmp/kustomize.tar.gz -C /tmp \
     && mv /tmp/kustomize /usr/local/bin/kustomize \
     && chmod +x /usr/local/bin/kustomize
+
+ENV HELM_VERSION=3.13.1
+RUN curl -LO "https://get.helm.sh/helm-v${HELM_VERSION}-linux-amd64.tar.gz" \
+    && tar -zxvf "helm-v${HELM_VERSION}-linux-amd64.tar.gz" \
+    && mv linux-amd64/helm /usr/local/bin/ \
+    && rm -rf "helm-v${HELM_VERSION}-linux-amd64.tar.gz" linux-amd64
