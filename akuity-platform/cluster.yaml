@@ -1,0 +1,8 @@
+apiVersion: argocd.akuity.io/v1alpha1
+kind: Cluster
+metadata:
+  name: dev
+spec:
+  description: "kind cluster"
+  data:
+    size: small
