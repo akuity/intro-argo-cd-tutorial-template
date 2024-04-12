@@ -2,6 +2,7 @@
 workspace="/workspaces/intro-argo-cd-tutorial"
 
 ## Check to see if you're in the right path
+## This protects against updating the template while working on the template repo.
 ## TODO: This will fail if users are doing this "outside" of GitHub. Need a way to "normalize it"
 if [[ ! -d ${workspace} ]] ; then
     echo "FATAL: Unable to verify current working directory"
