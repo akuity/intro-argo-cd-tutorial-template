@@ -13,5 +13,6 @@ echo 'source <(kustomize completion bash)' >> /home/vscode/.bashrc
 echo 'source <(kind completion bash)' >> /home/vscode/.bashrc
 echo 'alias k="kubectl"' >> /home/vscode/.bashrc
 echo 'complete -F __start_kubectl k' >> /home/vscode/.bashrc
+echo 'export AKUITY_SERVER_URL=https://training.akuity.cloud' >> /home/vscode/.bashrc
 
 echo "post-create complete" >> ~/.status.log
