@@ -13,7 +13,7 @@ spec:
       valueFiles:
         - values-stg.yaml
   destination:
-    namespace: guestbook
+    namespace: guestbook-stg
     name: dev # Update this value.
   syncPolicy:
     syncOptions:

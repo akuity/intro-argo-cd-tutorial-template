@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: guestbook-dev
+  name: guestbook
   namespace: argocd
 spec:
   project: default
@@ -9,11 +9,8 @@ spec:
     repoURL: 'https://github.com/<username>/intro-argo-cd-tutorial' # Update to match your fork.
     path: guestbook
     targetRevision: HEAD
-    helm:
-      valueFiles:
-        - values-dev.yaml
   destination:
-    namespace: guestbook-dev
+    namespace: guestbook
     name: dev # Update this value.
   syncPolicy:
     syncOptions:
