@@ -6,7 +6,7 @@ echo "post-start start" >> ~/status.log
 
 kind export kubeconfig --name dev
 
-bash hack/update-repo-for-workshop.sh
+bash .hack/update-repo-for-workshop.sh
 
 source ~/.bashrc
 
