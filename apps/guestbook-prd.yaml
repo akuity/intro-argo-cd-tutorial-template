@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: guestbook
+  name: guestbook-prd
   namespace: argocd
 spec:
   project: default
@@ -9,8 +9,11 @@ spec:
     repoURL: 'https://github.com/<username>/intro-argo-cd-tutorial'
     path: guestbook
     targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values-prd.yaml
   destination:
-    namespace: guestbook
+    namespace: guestbook-prd
     name: dev
   syncPolicy:
     syncOptions:
