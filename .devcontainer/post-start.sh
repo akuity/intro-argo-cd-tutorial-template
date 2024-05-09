@@ -8,6 +8,7 @@ kind export kubeconfig --name dev
 
 bash .hack/update-repo-for-workshop.sh
 
+# Best effort env load
 source ~/.bashrc
 
 echo "post-start complete" >> ~/status.log
