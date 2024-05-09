@@ -3,6 +3,6 @@ kind: Cluster
 metadata:
   name: dev
 spec:
-  description: "kind cluster"
+  description: "dev cluster"
   data:
     size: small

@@ -4,7 +4,8 @@ echo "post-start start" >> ~/status.log
 
 # this runs in background each time the container starts
 
-kind export kubeconfig --name dev
+# Ensure kubeconfig is set up. 
+k3d kubeconfig merge dev --kubeconfig-merge-default
 
 bash .hack/update-repo-for-workshop.sh
 
