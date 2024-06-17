@@ -7,9 +7,6 @@ echo "$(date): Running post-start.sh" >> ~/.status.log
 
 # Ensure kubeconfig is set up. 
 k3d kubeconfig merge dev --kubeconfig-merge-default
-
-bash .hack/update-repo-for-workshop.sh
-
 kubectl apply -k argocd 2>&1 | tee -a ~/.status.log
 
 kubectl wait deployment -n argocd --all --for=condition=Available=True --timeout=90s 2>&1 | tee -a ~/.status.log
@@ -26,5 +23,7 @@ argocd login \
   --insecure 2>&1 | tee -a ~/.status.log
 
 echo "Argo CD admin password: ${ARGOCD_ADMIN_PASSWORD}"
+
+bash .hack/update-repo-for-workshop.sh
 
 echo "$(date): Finished post-start.sh" >> ~/.status.log
