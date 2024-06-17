@@ -1,6 +1,6 @@
 {
 	"name": "workshop-environment",
-	"image": "quay.io/akuity/argo-cd-learning-assets/akuity-devcontainer:0.2.2",
+	"image": "quay.io/akuity/argo-cd-learning-assets/akuity-devcontainer:0.2.3",
 
 	"features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {
@@ -22,9 +22,9 @@
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
 
-	"forwardPorts": [8080],
+	"forwardPorts": [31443],
 	"portsAttributes": {
-		"8080": {
+		"31443": {
 			"label": "Argo CD Dashboard",
 			"protocol": "https"
 		}
