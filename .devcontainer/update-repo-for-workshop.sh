@@ -26,7 +26,7 @@ echo "Updated files with repo" >> ~/.status.log
 ## Now that the files are updated, we commit it and push it up. Best effort :cross_fingers_emoji:
 cd ${workspace}
 git add .
-git commit -am "updated source to point to ${GITHUB_USER}"
+git commit -am "refactor: update placeholders with ${GITHUB_USER}"
 git push origin main
 echo "Pushed changes with new repo name" >> ~/.status.log
 
